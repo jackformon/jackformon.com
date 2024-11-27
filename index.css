@@ -1,0 +1,152 @@
+
+
+:root {
+  --textColor: rgb(255, 25, 0);
+}
+/* Basic Reset */
+body {
+    margin: 0;
+    padding: 0;
+    background: black; /* Terminal-style background */
+    color: var(--textColor); /* Terminal-style text color */
+    font-family: "Courier New", Courier, monospace; /* Terminal-style font */
+    height: 100vh; /* Full viewport height */
+  }
+  
+  /* Terminal Styling */
+  .terminal {
+    position: absolute; /* Position relative to top-left of viewport */
+    padding-left: 30px;
+    text-align: left; /* Aligns text to the left */
+  }
+  
+  /* Typing Effect Text */
+  .typing {
+    font-size: 5rem; /* Larger text size */
+    line-height: 1.2; /* Adjust line height for better readability */
+    margin: 0;
+    margin-top: 2rem;
+  }
+  
+  .typing-bio {
+    font-size: 2rem; /* Adjust font size */
+    white-space: normal; /* Allow line wrapping */
+    line-height: 1.5; /* Adjust line spacing for readability */
+    margin: 0;
+    vertical-align: top;
+    padding: 0;
+    margin-top: 10px;
+  }
+
+  /* Blinking Cursor */
+  .cursor{
+    display: inline-block;
+    width: 30px;
+    height: 1.2em;
+    margin-left: 5px;
+    animation: blink 0.8s steps(2, start) infinite;
+    background-color: var(--textColor);
+  }
+  
+  .cursor-bio {
+    display: inline-block;
+    width: 12px;
+    height: 1.2em;
+    margin-left: 5px;
+    animation: blink 0.8s steps(2, start) infinite;
+    background-color: var(--textColor);
+  }
+
+  .enter-button {
+    font-family: "Courier New", Courier, monospace;
+    position: absolute;
+    display: none; /* Hidden initially */
+    margin: 0 auto; /* Center horizontally */
+    padding: 10px 20px; /* Button size */
+    font-size: 1.5rem; /* Text size */
+    color: var(--textColor); /* Green text */
+    background-color: black; /* Black background */
+    border: 2px solid var(--textColor); /* Green border */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center;
+    transition: all 0.3s ease; /* Smooth hover transition */
+    margin-top: 20px
+  }
+  
+  .enter-button:hover {
+    background-color: var(--textColor); /* Green background on hover */
+    color: black; /* Black text on hover */
+  }
+
+  .skip-button {
+    font-family: "Courier New", Courier, monospace;
+    position: fixed; /* Fixed position relative to the viewport */
+    bottom: 20px; /* Position 20px from the bottom */
+    right: 20px; /* Position 20px from the right */
+    padding: 8px 12px; /* Button size */
+    font-size: 0.7rem; /* Text size */
+    background-color: black; /* Black background */
+    color: var(--textColor); /* Green text */
+    border: 1.5px solid var(--textColor); /* Green border */
+    cursor: pointer; /* Pointer cursor on hover */
+    text-align: center;
+    transition: all 0.3s ease; /* Smooth hover transition */
+    z-index: 1000; /* Ensure it's above other elements */
+  }
+  
+  .skip-button:hover {
+    background-color: var(--textColor); /* Green background on hover */
+    color: black; /* Black text on hover */
+  }
+  
+  /* Blinking Effect */
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .typing {
+      font-size: 3rem; 
+    }
+  
+    .typing-bio {
+      font-size: 1.6rem;
+    }
+  
+    .enter-button {
+      font-size: 1.2rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .typing {
+      font-size: 1.5rem;
+      line-height: 1.1; 
+      margin-bottom: 30px;
+    }
+
+    .cursor{
+      width: 10px;
+    }
+
+    .cursor-bio{
+      width: 6px;
+    }
+  
+    .typing-bio {
+      font-size: 1rem; 
+      line-height: 1.4;
+
+    }
+  
+    .enter-button {
+      font-size: 1rem; 
+      padding: 6px 12px;
+    }
+  }
